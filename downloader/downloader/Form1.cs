@@ -15,7 +15,8 @@ namespace downloader
     public partial class YoutubeDowloaderAndConverter : Form
     {
         string pathToSaveVideos;
-
+        string inputVideo;
+        string outputFile;
         public YoutubeDowloaderAndConverter()
         {
             InitializeComponent();
@@ -86,6 +87,35 @@ namespace downloader
         {
             await DownloadAsync("mp3");
             Show();
+        }
+
+        private void buttonBrowse_Click(object sender, EventArgs e)
+        {
+            if(openFileVideoPath.ShowDialog()==DialogResult.OK)
+            {
+                inputVideo = openFileVideoPath.FileName;
+                outputFile = inputVideo.Substring(0, inputVideo.IndexOf("."));
+            }
+        }
+
+        private void folderBrowserForSavingTheFile_HelpRequest(object sender, EventArgs e)
+        {
+
+        }
+
+        private void buttonConvert_Click(object sender, EventArgs e)
+        {
+            if(!string.IsNullOrEmpty(inputVideo))
+            {
+                var convertVideo = new NReco.VideoConverter.FFMpegConverter();
+                convertVideo.ConvertMedia(inputVideo, outputFile + ".mp3", "mp3");
+                MessageBox.Show("converted!!");
+            }
+            else
+            {
+                MessageBox.Show("choose video");
+            }
+
         }
     }
 }

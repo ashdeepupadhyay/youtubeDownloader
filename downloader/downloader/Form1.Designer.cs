@@ -40,6 +40,7 @@
             this.buttonToSaveThePath = new System.Windows.Forms.Button();
             this.buttonDownloadMp4 = new System.Windows.Forms.Button();
             this.buttonDowloadMp3 = new System.Windows.Forms.Button();
+            this.openFileVideoPath = new System.Windows.Forms.OpenFileDialog();
             this.SuspendLayout();
             // 
             // textURL
@@ -85,6 +86,7 @@
             this.buttonBrowse.TabIndex = 5;
             this.buttonBrowse.Text = "Browse the Video to Convert";
             this.buttonBrowse.UseVisualStyleBackColor = true;
+            this.buttonBrowse.Click += new System.EventHandler(this.buttonBrowse_Click);
             // 
             // buttonConvert
             // 
@@ -94,6 +96,7 @@
             this.buttonConvert.TabIndex = 6;
             this.buttonConvert.Text = "Click To Convert the Video";
             this.buttonConvert.UseVisualStyleBackColor = true;
+            this.buttonConvert.Click += new System.EventHandler(this.buttonConvert_Click);
             // 
             // label1
             // 
@@ -103,6 +106,10 @@
             this.label1.Size = new System.Drawing.Size(306, 17);
             this.label1.TabIndex = 8;
             this.label1.Text = "Videos will be saved to  path you have selected";
+            // 
+            // folderBrowserForSavingTheFile
+            // 
+            this.folderBrowserForSavingTheFile.HelpRequest += new System.EventHandler(this.folderBrowserForSavingTheFile_HelpRequest);
             // 
             // buttonToSaveThePath
             // 
@@ -133,6 +140,10 @@
             this.buttonDowloadMp3.Text = "Click to download MP3 audio";
             this.buttonDowloadMp3.UseVisualStyleBackColor = true;
             this.buttonDowloadMp3.Click += new System.EventHandler(this.buttonDowloadMp3_ClickAsync);
+            // 
+            // openFileVideoPath
+            // 
+            this.openFileVideoPath.FileName = "openFileDialog1";
             // 
             // YoutubeDowloaderAndConverter
             // 
@@ -171,6 +182,7 @@
         private System.Windows.Forms.Button buttonToSaveThePath;
         private System.Windows.Forms.Button buttonDownloadMp4;
         private System.Windows.Forms.Button buttonDowloadMp3;
+        private System.Windows.Forms.OpenFileDialog openFileVideoPath;
     }
 }
 
