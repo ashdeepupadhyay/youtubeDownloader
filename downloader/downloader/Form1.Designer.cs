@@ -30,16 +30,16 @@
         {
             this.textURL = new System.Windows.Forms.TextBox();
             this.PasteTheLink = new System.Windows.Forms.Label();
-            this.buttonDownloadM4 = new System.Windows.Forms.Button();
             this.DowloadYoutubeVideo = new System.Windows.Forms.Label();
             this.ConvertMP4ToMP3 = new System.Windows.Forms.Label();
             this.folderBrowserForConvertingVideo = new System.Windows.Forms.FolderBrowserDialog();
             this.buttonBrowse = new System.Windows.Forms.Button();
             this.buttonConvert = new System.Windows.Forms.Button();
-            this.buttonDowloadMP3 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.folderBrowserForSavingTheFile = new System.Windows.Forms.FolderBrowserDialog();
             this.buttonToSaveThePath = new System.Windows.Forms.Button();
+            this.buttonDownloadMp4 = new System.Windows.Forms.Button();
+            this.buttonDowloadMp3 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // textURL
@@ -58,16 +58,6 @@
             this.PasteTheLink.Size = new System.Drawing.Size(190, 17);
             this.PasteTheLink.TabIndex = 1;
             this.PasteTheLink.Text = "Paste The Link To Download";
-            // 
-            // buttonDownloadM4
-            // 
-            this.buttonDownloadM4.Location = new System.Drawing.Point(560, 128);
-            this.buttonDownloadM4.Name = "buttonDownloadM4";
-            this.buttonDownloadM4.Size = new System.Drawing.Size(197, 23);
-            this.buttonDownloadM4.TabIndex = 2;
-            this.buttonDownloadM4.Text = "Click To Download MP4";
-            this.buttonDownloadM4.UseVisualStyleBackColor = true;
-            this.buttonDownloadM4.Click += new System.EventHandler(this.buttonDownloadM4_Click);
             // 
             // DowloadYoutubeVideo
             // 
@@ -105,15 +95,6 @@
             this.buttonConvert.Text = "Click To Convert the Video";
             this.buttonConvert.UseVisualStyleBackColor = true;
             // 
-            // buttonDowloadMP3
-            // 
-            this.buttonDowloadMP3.Location = new System.Drawing.Point(217, 128);
-            this.buttonDowloadMP3.Name = "buttonDowloadMP3";
-            this.buttonDowloadMP3.Size = new System.Drawing.Size(174, 23);
-            this.buttonDowloadMP3.TabIndex = 7;
-            this.buttonDowloadMP3.Text = "Click To Download MP3";
-            this.buttonDowloadMP3.UseVisualStyleBackColor = true;
-            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -125,26 +106,47 @@
             // 
             // buttonToSaveThePath
             // 
-            this.buttonToSaveThePath.Location = new System.Drawing.Point(300, 84);
+            this.buttonToSaveThePath.Location = new System.Drawing.Point(358, 84);
             this.buttonToSaveThePath.Name = "buttonToSaveThePath";
             this.buttonToSaveThePath.Size = new System.Drawing.Size(243, 23);
             this.buttonToSaveThePath.TabIndex = 9;
             this.buttonToSaveThePath.Text = "browse the path to save the video";
             this.buttonToSaveThePath.UseVisualStyleBackColor = true;
+            this.buttonToSaveThePath.Click += new System.EventHandler(this.buttonToSaveThePath_Click);
+            // 
+            // buttonDownloadMp4
+            // 
+            this.buttonDownloadMp4.Location = new System.Drawing.Point(560, 119);
+            this.buttonDownloadMp4.Name = "buttonDownloadMp4";
+            this.buttonDownloadMp4.Size = new System.Drawing.Size(201, 23);
+            this.buttonDownloadMp4.TabIndex = 10;
+            this.buttonDownloadMp4.Text = "Click to download MP4 video";
+            this.buttonDownloadMp4.UseVisualStyleBackColor = true;
+            this.buttonDownloadMp4.Click += new System.EventHandler(this.buttonDownloadMp4_ClickAsync);
+            // 
+            // buttonDowloadMp3
+            // 
+            this.buttonDowloadMp3.Location = new System.Drawing.Point(221, 119);
+            this.buttonDowloadMp3.Name = "buttonDowloadMp3";
+            this.buttonDowloadMp3.Size = new System.Drawing.Size(229, 23);
+            this.buttonDowloadMp3.TabIndex = 11;
+            this.buttonDowloadMp3.Text = "Click to download MP3 audio";
+            this.buttonDowloadMp3.UseVisualStyleBackColor = true;
+            this.buttonDowloadMp3.Click += new System.EventHandler(this.buttonDowloadMp3_ClickAsync);
             // 
             // YoutubeDowloaderAndConverter
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.buttonDowloadMp3);
+            this.Controls.Add(this.buttonDownloadMp4);
             this.Controls.Add(this.buttonToSaveThePath);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.buttonDowloadMP3);
             this.Controls.Add(this.buttonConvert);
             this.Controls.Add(this.buttonBrowse);
             this.Controls.Add(this.ConvertMP4ToMP3);
             this.Controls.Add(this.DowloadYoutubeVideo);
-            this.Controls.Add(this.buttonDownloadM4);
             this.Controls.Add(this.PasteTheLink);
             this.Controls.Add(this.textURL);
             this.Name = "YoutubeDowloaderAndConverter";
@@ -159,16 +161,16 @@
 
         private System.Windows.Forms.TextBox textURL;
         private System.Windows.Forms.Label PasteTheLink;
-        private System.Windows.Forms.Button buttonDownloadM4;
         private System.Windows.Forms.Label DowloadYoutubeVideo;
         private System.Windows.Forms.Label ConvertMP4ToMP3;
         private System.Windows.Forms.FolderBrowserDialog folderBrowserForConvertingVideo;
         private System.Windows.Forms.Button buttonBrowse;
         private System.Windows.Forms.Button buttonConvert;
-        private System.Windows.Forms.Button buttonDowloadMP3;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.FolderBrowserDialog folderBrowserForSavingTheFile;
         private System.Windows.Forms.Button buttonToSaveThePath;
+        private System.Windows.Forms.Button buttonDownloadMp4;
+        private System.Windows.Forms.Button buttonDowloadMp3;
     }
 }
 
