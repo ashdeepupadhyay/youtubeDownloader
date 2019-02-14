@@ -60,7 +60,7 @@ namespace downloader
         {
             if(folderBrowserForConvertingVideo.ShowDialog()==DialogResult.OK)
             {
-                pathToSaveVideos = folderBrowserForConvertingVideo.SelectedPath;
+                pathToSaveVideos = folderBrowserForConvertingVideo.SelectedPath;             
             }
         }
         private async Task DownloadAsync(string type)
@@ -70,8 +70,8 @@ namespace downloader
                 var client = new YoutubeClient();
                 string[] fileLines = textURL.Text.Split(new string[] { YOUTUBE_TAG_SIGNATURE }, StringSplitOptions.None);
                 var streamInfoSet = await client.GetVideoMediaStreamInfosAsync(fileLines[1]);
-                var streamInfo = streamInfoSet.Muxed.WithHighestVideoQuality();
-                await client.DownloadMediaStreamAsync(streamInfo, pathToSaveVideos + streamInfo.ToString() + "."+type);
+                var streamInfo = streamInfoSet.Muxed.WithHighestVideoQuality();           
+                await client.DownloadMediaStreamAsync(streamInfo, pathToSaveVideos + "\\"+ fileLines[1]+ "."+type);
             }
         }
         private void Show()
