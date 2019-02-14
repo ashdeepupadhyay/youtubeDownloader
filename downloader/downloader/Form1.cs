@@ -17,6 +17,7 @@ namespace downloader
         string pathToSaveVideos;
         string inputVideo;
         string outputFile;
+        const string YOUTUBE_TAG_SIGNATURE = "?v=";
         public YoutubeDowloaderAndConverter()
         {
             InitializeComponent();
@@ -67,7 +68,8 @@ namespace downloader
             if (Check())
             {
                 var client = new YoutubeClient();
-                var streamInfoSet = await client.GetVideoMediaStreamInfosAsync(textURL.Text);
+                string[] fileLines = textURL.Text.Split(new string[] { YOUTUBE_TAG_SIGNATURE }, StringSplitOptions.None);
+                var streamInfoSet = await client.GetVideoMediaStreamInfosAsync(fileLines[1]);
                 var streamInfo = streamInfoSet.Muxed.WithHighestVideoQuality();
                 await client.DownloadMediaStreamAsync(streamInfo, pathToSaveVideos + streamInfo.ToString() + "."+type);
             }
@@ -117,5 +119,17 @@ namespace downloader
             }
 
         }
+
+        private void openFileDefaultPathForDownload_FileOk(object sender, CancelEventArgs e)
+        {
+
+        }
+
+        private void folderBrowserForConvertingVideo_HelpRequest(object sender, EventArgs e)
+        {
+
+        }
     }
 }
+
+

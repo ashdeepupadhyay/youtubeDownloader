@@ -36,7 +36,6 @@
             this.buttonBrowse = new System.Windows.Forms.Button();
             this.buttonConvert = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.folderBrowserForSavingTheFile = new System.Windows.Forms.FolderBrowserDialog();
             this.buttonToSaveThePath = new System.Windows.Forms.Button();
             this.buttonDownloadMp4 = new System.Windows.Forms.Button();
             this.buttonDowloadMp3 = new System.Windows.Forms.Button();
@@ -78,6 +77,10 @@
             this.ConvertMP4ToMP3.TabIndex = 4;
             this.ConvertMP4ToMP3.Text = "Convert MP4 To MP3";
             // 
+            // folderBrowserForConvertingVideo
+            // 
+            this.folderBrowserForConvertingVideo.HelpRequest += new System.EventHandler(this.folderBrowserForConvertingVideo_HelpRequest);
+            // 
             // buttonBrowse
             // 
             this.buttonBrowse.Location = new System.Drawing.Point(560, 273);
@@ -106,10 +109,6 @@
             this.label1.Size = new System.Drawing.Size(306, 17);
             this.label1.TabIndex = 8;
             this.label1.Text = "Videos will be saved to  path you have selected";
-            // 
-            // folderBrowserForSavingTheFile
-            // 
-            this.folderBrowserForSavingTheFile.HelpRequest += new System.EventHandler(this.folderBrowserForSavingTheFile_HelpRequest);
             // 
             // buttonToSaveThePath
             // 
@@ -178,7 +177,6 @@
         private System.Windows.Forms.Button buttonBrowse;
         private System.Windows.Forms.Button buttonConvert;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.FolderBrowserDialog folderBrowserForSavingTheFile;
         private System.Windows.Forms.Button buttonToSaveThePath;
         private System.Windows.Forms.Button buttonDownloadMp4;
         private System.Windows.Forms.Button buttonDowloadMp3;
